@@ -59,11 +59,6 @@ pipeline {
         ) 
         {
           container('jmeter') {
-          perfSigDynatraceReports(
-  envId: 'Dynatrace Tenant', 
-  nonFunctionalFailure: 1, 
-  specFile: "monspec/${env.APP_NAME}_perfsig.json"
-) 
             script {
               def status = executeJMeter ( 
                 scriptName: "jmeter/${env.APP_NAME}_perfcheck.jmx",
